@@ -5,7 +5,12 @@ import net.demilich.metastone.game.GameContext;
 import net.demilich.metastone.game.Player;
 import net.demilich.metastone.game.entities.minions.Minion;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class WeightedHeuristic implements IGameStateHeuristic {
+
+	private final Logger logger = LoggerFactory.getLogger(WeightedHeuristic.class);
 
 	private float calculateMinionScore(Minion minion) {
 		float minionScore = minion.getAttack() + minion.getHp();
@@ -34,8 +39,9 @@ public class WeightedHeuristic implements IGameStateHeuristic {
 		if (minion.hasAttribute(Attribute.UNTARGETABLE_BY_SPELLS)) {
 			minionScore += 1.5f * baseScore;
 		}
-
+		logger.info("Minion score in weighted heuristic is {}", minionScore);
 		return minionScore;
+		
 	}
 
 	@Override
@@ -63,7 +69,7 @@ public class WeightedHeuristic implements IGameStateHeuristic {
 		for (Minion minion : opponent.getMinions()) {
 			score -= calculateMinionScore(minion);
 		}
-
+		logger.info("score in weighted heuristic is {}", score);
 		return score;
 	}
 

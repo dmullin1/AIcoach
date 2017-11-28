@@ -1,5 +1,4 @@
 package net.demilich.metastone.game;
-
 public enum Attribute {
 	DEBUG,
 	BASE_MANA_COST,
