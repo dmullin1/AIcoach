@@ -9,7 +9,7 @@ import net.demilich.metastone.game.Player;
 import net.demilich.metastone.game.actions.GameAction;
 import net.demilich.metastone.game.behaviour.PlayRandomBehaviour;
 
-class Node {
+public class Node {
 
 	private GameContext state;
 	private List<GameAction> validTransitions;

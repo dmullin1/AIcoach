@@ -5,6 +5,7 @@ import java.util.List;
 import net.demilich.metastone.game.GameContext;
 import net.demilich.metastone.game.Player;
 import net.demilich.metastone.game.actions.GameAction;
+import net.demilich.metastone.game.behaviour.threat.GameStateValueBehaviour;
 
 public class HumanActionOptions {
 
@@ -19,6 +20,7 @@ public class HumanActionOptions {
 		this.player = player;
 		this.validActions = validActions;
 	}
+
 
 	public HumanBehaviour getBehaviour() {
 		return behaviour;

@@ -20,6 +20,10 @@ jar {
 	}
 }
 
+run{
+    standardInput = System.in
+}
+
 dependencies {
 	compile project(':game')
 	compile project(':cards')
